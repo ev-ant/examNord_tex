@@ -57,7 +57,11 @@
 
 \def\listAtt{}
 \def\ListAtt{}
-\newcommand{\ListAttach}[1][]{\renewcommand{\ListAtt}{\textbf{Attachments:} & \listAtt\\}}
+\def\ListAttach[#1]{%
+    \renewcommand{\listAtt}{#1}
+    \renewcommand{\ListAtt}{\textbf{Attachments:} & \listAtt\\}
+}
+
 \def\noAttachment{\label{LastP}}
 
 
